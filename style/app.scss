@@ -24,24 +24,29 @@ $breakpoints: (
 
 // columns
 $columns: 12;
-$col: $columns;
-
-@mixin col($col, $columns) {
-  width: percentage($col/$columns);
-}
 
 
-//===========  mixins end ===========//
-
-@mixin col-create(){
-  @while $col > 0 {
-
-    .col-#{$col} {
-
-      @include col($col, $columns);
+@each $breakpoint in $breakpoints {
+  $name: nth($breakpoint, 1);
+  $size: nth($breakpoint, 2);
+  @media only screen and (min-width: $size) {
+    [class*="col-#{$name}"] {
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      padding-right: $colGups;
+      padding-left: $colGups;
     }
-
-    $col: $col - 1;
+    @for $i from 1 through $columns {
+      .col-#{$name}-#{$i} {
+        flex-basis: 100% / $columns * $i;
+        max-width: 100% / $columns * $i;
+      }
+    }
+    @for $i from 1 through $columns {
+      .col-#{$name}-offset-#{$i} {
+        margin-left: 100% / $columns * $i
+      }
+    }
   }
 }
 
@@ -69,7 +74,6 @@ $col: $columns;
   min-height: 1px;
 }
 
-@include col-create()
 
 
 // main styles
@@ -93,4 +97,18 @@ button, .button{
 
 .button{
 
+}
+
+.ba-header{
+  &__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
