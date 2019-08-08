@@ -1,15 +1,18 @@
 $mainColor : #5565ff;
 body{
     background-color: $mainColor;
-    display: flex;
     justify-content: space-between;
 
     a{
         transform: scale(1.5);
-        border: #fff;
+        border: #5565ff;
         font-size: 3em; 
-        color: #fff;
+        color: red;
     }
+}
+
+h1{
+    color: #fff;
 }
 
 @import 'main.scss';
