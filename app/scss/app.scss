@@ -1,0 +1,18 @@
+$mainColor : #5565ff;
+body{
+    background-color: $mainColor;
+    justify-content: space-between;
+
+    a{
+        transform: scale(1.5);
+        border: #5565ff;
+        font-size: 3em; 
+        color: red;
+    }
+}
+
+h1{
+    color: #fff;
+}
+
+@import 'main.scss';
