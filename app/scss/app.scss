@@ -1,18 +1,15 @@
-$mainColor : #5565ff;
-body{
-    background-color: $mainColor;
-    justify-content: space-between;
+@import 'helpers/variables.scss';
+@import 'helpers/mixins.scss';
+@import 'base.scss';
+@import 'header.scss';
+@import 'menu.scss';
+@import 'footer.scss';
 
-    a{
-        transform: scale(1.5);
-        border: #5565ff;
-        font-size: 3em; 
-        color: green;
-    }
-}
+// slider
+// @import 'libs/slick.scss';
+// @import 'libs/slick-theme.scss';
 
-h1{
-    color: #fff;
-}
+// animate library
+@import 'libs/animate.scss';
 
-@import 'main.scss';
+@import 'home.scss';
