@@ -8,6 +8,7 @@ var imagemin = require('gulp-imagemin');
 var postcss = require('gulp-postcss');
 var pngquant = require('imagemin-pngquant');
 var webp = require('gulp-webp');
+var babel = require("gulp-babel");
 var browserSync = require('browser-sync').create();
 
 function sync(cb) {
@@ -65,6 +66,14 @@ function buildJs(cb) {
     gulp.src('app/**/*.js')
         .pipe(gulp.dest('build/'))
         .pipe(browserSync.reload({ stream: true }));
+
+    gulp.src("src/**/*.js")
+        .pipe(sourcemaps.init())
+        .pipe(babel())
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest("build/js"));
+
+
     cb();
 }
 
