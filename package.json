@@ -18,6 +18,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
+    "gulp-webp": "^4.0.1",
     "imagemin-pngquant": "^8.0.0"
   }
 }
