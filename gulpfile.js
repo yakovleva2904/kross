@@ -63,19 +63,20 @@ function buildHtml(cb) {
 }
 
 function buildJs(cb) {
-    gulp.src('app/**/*.js')
-        .pipe(gulp.dest('build/'))
-        .pipe(browserSync.reload({ stream: true }));
 
-    gulp.src("src/**/*.js")
+
+    gulp.src("app/js/app.js")
         .pipe(sourcemaps.init())
-        .pipe(babel())
-        .pipe(sourcemaps.write("."))
-        .pipe(gulp.dest("build/js"));
-
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(gulp.dest("build/js"))
+        .pipe(browserSync.reload({ stream: true }));
 
     cb();
 }
+
+gulp.task('buildJs', buildJs);
 
 function imageBuild(cb) {
     gulp.src('app/images/**/*.*')
