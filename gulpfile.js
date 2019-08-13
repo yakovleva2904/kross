@@ -73,6 +73,11 @@ function buildJs(cb) {
         .pipe(gulp.dest("build/js"))
         .pipe(browserSync.reload({ stream: true }));
 
+        gulp.src(['app/js/*.js', '!app/js/app.js'])
+        .pipe(sourcemaps.init())
+        .pipe(gulp.dest("build/js"))
+        .pipe(browserSync.reload({ stream: true }));
+
     cb();
 }
 
