@@ -112,7 +112,7 @@ function watchFiles(cb) {
     cb();
 }
 
-function browserReload(cb) {
+// function browserReload(cb) {
     browserSync.reload();
     cb();
 }
