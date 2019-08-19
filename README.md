@@ -11,6 +11,9 @@ Use Gulp 4, Babel, AutoPrefixer, SCSS, webp
   <code>
     git clone https://github.com/antipenko/ba-starter-flex .
   </code>
+   <code>
+    git remote remove origin
+  </code>
   <code>
     npm i
   </code>

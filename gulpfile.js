@@ -112,10 +112,6 @@ function watchFiles(cb) {
     cb();
 }
 
-// function browserReload(cb) {
-    browserSync.reload();
-    cb();
-}
 
 function build(cb) {
     buildHtml(cb);
