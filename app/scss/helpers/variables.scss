@@ -2,6 +2,8 @@
 $mainColor: #444;
 $mainBackground: #fff;
 
+$primaryColor: #41228e;
+
 $container: 1170px;
 $colGups: 15px;
 
@@ -17,3 +19,6 @@ $breakpoints: (
         xl: 1200px,
         xxl: 1440px
 );
+
+//
+$heroBackground: $primaryColor;
